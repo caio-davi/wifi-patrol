@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color:#E4F6F5;
 }
 
 .App-logo {
@@ -15,14 +16,14 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 5em;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
   color: white;
 }
+
 
 .App-link {
   color: #61dafb;
@@ -40,6 +41,11 @@
   height: 90%;
 }
 
+.RouterPanel{
+  width: 400px;
+  background-color:#E4F6F5;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -47,4 +53,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.show{
+  width: 16em;
+  background-color:#E4F6F5;
+  transition: 1s linear;
+}
+
+.hide{
+  width: 0px;
+  transition: 1s linear;
 }

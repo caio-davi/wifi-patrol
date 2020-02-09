@@ -1,0 +1,26 @@
+.List {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+    background-color:#E4F6F5;
+    width:18%;
+  }
+
+.Router {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    width: 16em;
+    padding:1.5em;
+    margin:0em;
+    border:0.15em solid #807d7d;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Segoe UI','Roboto',sans-serif;
+    font-weight:400;
+    color:#000000;
+    background-color:#CCCCCC;
+    text-align:center;
+    position:relative;
+    }
