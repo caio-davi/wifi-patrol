@@ -3,7 +3,7 @@ import '../styles/App.css';
 import LeafletMap from './LeafletMap';
 import RouterList from './RouterList';
 
-function App() {
+const App = () => {
 
 
   return (
