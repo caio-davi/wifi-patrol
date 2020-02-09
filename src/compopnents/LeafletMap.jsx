@@ -21,32 +21,46 @@ const LeafletMap = (props) => {
     const Patrol = () => {
         const position = [props.patrol['lat'], props.patrol['lng']];
         return(
-            <Marker position={position} icon={patrolIcon} >
-            <Circle radius={35} center={position}  color="blue"/>
-                <Popup>So far, so good...</Popup>
-            </Marker>
+            <div>
+                {showRadius(position, 'blue')}
+                <Marker position={position} icon={patrolIcon} >
+                    <Popup>So far, so good...</Popup>
+                </Marker>
+            </div>
         )
     };
 
+    const showRadius = (position, color) => {
+        return props.showRadius ? <Circle radius={35} center={position}  color={color}/> : '';
+    };
+
     const Intruder = () => {
-        const position = [props.intruder['lat'], props.intruder['lng']];
-        return(
-            <Marker position={position} icon={intruderIcon} >
-            <Circle radius={35} center={position}  color="red"/>
-                <Popup>So far, so good...</Popup>
-            </Marker>
-        )
+        if(props.intruder.status){
+            const position = [props.intruder['lat'], props.intruder['lng']];
+            return(
+                <div>
+                    {showRadius(position, 'red')}
+                    <Marker position={position} icon={intruderIcon} >
+                        <Popup>So far, so good...</Popup>
+                    </Marker>
+                </div>
+            )
+        }else{
+            return '';
+        }
     };
     
     const RouterMarkers = () =>{
         let markers = []
         for(let i in props.routers){
-            const newPosition = [props.routers[i]['lat'], props.routers[i]['lng']];
+            const position = [props.routers[i]['lat'], props.routers[i]['lng']];
             markers.push(
-                <Marker position={newPosition} >
-                    <Circle radius={35} center={newPosition}  color={props.routers[i]['color']}/>
-                    <Popup>{props.routers[i]['name']}</Popup>
-                </Marker>
+                <div>
+                    {showRadius(position, props.routers[i]['color'])}
+                    <Marker position={position} >
+                        <Popup>{props.routers[i]['name']}</Popup>
+                    </Marker>
+                </div>
             )
         }
         return markers;

@@ -1,8 +1,3 @@
-.show{
+.optButton{
     width: 16em;
-    background-color: red;
-}
-
-.hide{
-    width: 0px;
 }

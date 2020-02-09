@@ -34,7 +34,7 @@
   width: 100%;
 }
 
-.body {
+.Body {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -63,5 +63,6 @@
 
 .Hide{
   width: 0px;
+  max-width: 0px;
   transition: 1s linear;
 }
