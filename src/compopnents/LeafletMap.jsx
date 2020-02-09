@@ -1,75 +1,66 @@
 import React from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer, Circle } from 'react-leaflet';
+import L from 'leaflet';
 
 const LeafletMap = (props) => {
 
-    const routers_list = 
-        [{
-            'name': 'PDSB-ADMIN', 
-            'lat': 43.53885796212106, 
-            'lng': -79.66675600122652
-        }, {
-            'name': 'PDSB-MEDIA', 
-            'lat': 43.53885822401717, 
-            'lng': -79.66675319908991
-        }, {
-            'name': 'PDSB-WiFi', 
-            'lat': 43.53885925408986, 
-            'lng': -79.66676499293197
-        }, {
-            'name': 'PDSB-GUEST', 
-            'lat': 43.5388600450642, 
-            'lng': -79.66676126215748
-        }, {
-            'name': 'NETGEAR68', 
-            'lat': 43.5387133, 
-            'lng': -79.66787195
-        }, {
-            'name': 'Wireless2', 
-            'lat': 43.5389861, 
-            'lng': -79.6658873
-        }, {
-            'name': 'TPGuest', 
-            'lat': 43.53898610000001, 
-            'lng': -79.6658873
-        }, {
-            'name': 'Hotspot2E86', 
-            'lat': 43.5387932, 
-            'lng': -79.6673721
-        }, {
-            'name': 'HaloCam-2a0ecf', 
-            'lat': 43.5387932, 
-            'lng': -79.6673721
-        }, {
-            'name': 'LG Stylo 2 Plus_9586', 
-            'lat': 43.53884215909091, 
-            'lng': -79.66697206136364
-        }];
+    var patrolIcon = L.icon({
+            iconUrl: 'https://corruptionbycops.com/wp-content/uploads/2019/06/civilian-blue-police-groups.fw_.png',
+            iconAnchor: [15, 15],
+            iconSize: [40, 40],
+            popupAnchor: [0, 0],
+        });
 
+    var intruderIcon = L.icon({
+            iconUrl: 'https://i.ya-webdesign.com/images/anonymous-png-icon-16.png',
+            iconSize: [40, 40],
+            iconAnchor: [15, 15],
+            popupAnchor: [0, 0],
+        });
+
+    const Patrol = () => {
+        const position = [props.patrol['lat'], props.patrol['lng']];
+        return(
+            <Marker position={position} icon={patrolIcon} >
+            <Circle radius={35} center={position}  color="blue"/>
+                <Popup>So far, so good...</Popup>
+            </Marker>
+        )
+    };
+
+    const Intruder = () => {
+        const position = [props.intruder['lat'], props.intruder['lng']];
+        return(
+            <Marker position={position} icon={intruderIcon} >
+            <Circle radius={35} center={position}  color="red"/>
+                <Popup>So far, so good...</Popup>
+            </Marker>
+        )
+    };
+    
     const RouterMarkers = () =>{
         let markers = []
-        for(let i in routers_list){
-            const newPosition = [routers_list[i]['lat'], routers_list[i]['lng']];
+        for(let i in props.routers){
+            const newPosition = [props.routers[i]['lat'], props.routers[i]['lng']];
             markers.push(
-                <Marker position={newPosition}>
-                    <Popup>{routers_list[i]['name']}</Popup>
+                <Marker position={newPosition} >
+                    <Circle radius={35} center={newPosition}  color={props.routers[i]['color']}/>
+                    <Popup>{props.routers[i]['name']}</Popup>
                 </Marker>
             )
         }
-        console.log(markers);
         return markers;
     }
 
-    const position1 = [43.53885796212106, -79.66675600122652];
-    const position2 = [43.5386866, -79.6684081];
-
     return (
-                <Map center={position1} zoom={19}>
+                <Map center={props.center} zoom={19} >
                     <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                     />
                     <RouterMarkers/>
+                    <Patrol/>
+                    <Intruder/>
                 </Map>
             );
 };
