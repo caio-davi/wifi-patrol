@@ -24,6 +24,18 @@
   color: white;
 }
 
+.alarm-on{
+  height: 2em;
+  background-color: crimson;
+  transition: 1s linear;
+}
+
+.alarm-off{
+  height: 0px;
+  background-color: lightslategray;
+  transition: 1s linear;
+}
+
 
 .App-link {
   color: #61dafb;
@@ -56,7 +68,7 @@
 }
 
 .Show{
-  width: 16em;
+  width: 10em;
   background-color:#E4F6F5;
   transition: 1s linear;
 }
