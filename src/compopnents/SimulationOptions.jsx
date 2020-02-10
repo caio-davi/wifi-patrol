@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBBtn } from "mdbreact";
-import "../styles/RouterPanel.css";
+import "../styles/SimulationOptions.css";
 
 const SimulationOptions = props => {
   

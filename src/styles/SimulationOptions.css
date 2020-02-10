@@ -3,7 +3,10 @@
 }
 
 .btnList{
-    width: 8em;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width: 15em;
     background-color:#E4F6F5;
     transition: 1s linear;
   }

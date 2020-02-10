@@ -196,6 +196,9 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <MDBIcon icon="wifi" size="4x" className="amber-text" />
+        <div className="App-header-title">
+          Wifi Patrol
+        </div>
         <MDBIcon
           icon="bars"
           size="4x"
@@ -221,7 +224,6 @@ const App = () => {
           />
         <SimulationOptions
           className={display()}
-          display={display}
           toogleShowRadius={toogleShowRadius}
           toogleIntruder={toogleIntruder}
           resetWifi={resetWifi}
