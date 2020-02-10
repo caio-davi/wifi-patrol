@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/wifi-patrol/static/css/main.53eabb29.chunk.css",
+    "main.js": "/wifi-patrol/static/js/main.d9d91a77.chunk.js",
+    "main.js.map": "/wifi-patrol/static/js/main.d9d91a77.chunk.js.map",
+    "runtime-main.js": "/wifi-patrol/static/js/runtime-main.35fb22dc.js",
+    "runtime-main.js.map": "/wifi-patrol/static/js/runtime-main.35fb22dc.js.map",
+    "static/css/2.a0b32201.chunk.css": "/wifi-patrol/static/css/2.a0b32201.chunk.css",
+    "static/js/2.ea7c7bd1.chunk.js": "/wifi-patrol/static/js/2.ea7c7bd1.chunk.js",
+    "static/js/2.ea7c7bd1.chunk.js.map": "/wifi-patrol/static/js/2.ea7c7bd1.chunk.js.map",
+    "index.html": "/wifi-patrol/index.html",
+    "precache-manifest.72cb47b3d1a30010d2132501d78d2a13.js": "/wifi-patrol/precache-manifest.72cb47b3d1a30010d2132501d78d2a13.js",
+    "service-worker.js": "/wifi-patrol/service-worker.js",
+    "static/css/2.a0b32201.chunk.css.map": "/wifi-patrol/static/css/2.a0b32201.chunk.css.map",
+    "static/css/main.53eabb29.chunk.css.map": "/wifi-patrol/static/css/main.53eabb29.chunk.css.map",
+    "static/js/2.ea7c7bd1.chunk.js.LICENSE": "/wifi-patrol/static/js/2.ea7c7bd1.chunk.js.LICENSE",
+    "static/media/mdb.css": "/wifi-patrol/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/all.min.css": "/wifi-patrol/static/media/fa-solid-900.f6121be5.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35fb22dc.js",
+    "static/css/2.a0b32201.chunk.css",
+    "static/js/2.ea7c7bd1.chunk.js",
+    "static/css/main.53eabb29.chunk.css",
+    "static/js/main.d9d91a77.chunk.js"
+  ]
+}
